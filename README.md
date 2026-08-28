@@ -1,52 +1,136 @@
-# Pet Machine
+# 🐾 Pet Machine
 
-Um projeto Java simples que simula uma máquina de banho para pets.
+Aplicação em Java que simula o funcionamento de uma máquina de banho para pets.
 
-## Arquivos
+O projeto foi desenvolvido como exercício prático de **Programação Orientada a Objetos (POO)**, trabalhando separação de responsabilidades entre classes, encapsulamento, controle de estado e implementação de regras de negócio.
 
-- `main.java` - ponto de entrada da aplicação e menu de interação via terminal.
-- `Pet.java` - classe que representa um pet com nome e estado de limpeza.
-- `PetMachine.java` - classe que representa a máquina de banho, controla água, shampoo, limpeza e entrada/saída de pets.
+## 🎯 Objetivo
 
-## Funcionalidades
+O objetivo do projeto é representar, por meio de classes e objetos, o funcionamento de uma máquina que recebe um pet, realiza o banho e controla recursos como água e shampoo.
 
-O programa permite:
+A aplicação é executada pelo terminal e disponibiliza um menu para interação com as diferentes funcionalidades.
 
-- Dar banho no pet
-- Abastecer a máquina com água
-- Abastecer a máquina com shampoo
-- Verificar a quantidade de água disponível
-- Verificar a quantidade de shampoo disponível
-- Verificar se há um pet na máquina
-- Colocar um pet na máquina
-- Retirar um pet da máquina
-- Limpar a máquina
+## ⚙️ Funcionalidades
 
-## Requisitos
+A aplicação permite:
 
-- Java 8 ou superior
+- colocar um pet na máquina;
+- verificar se existe um pet na máquina;
+- realizar o banho;
+- retirar o pet;
+- abastecer água;
+- abastecer shampoo;
+- consultar os níveis de água e shampoo;
+- limpar a máquina;
+- controlar o estado de limpeza da máquina.
 
-## Como executar
+## 📋 Regras de negócio
 
-1. Compile os arquivos Java:
+A aplicação implementa algumas regras para controlar o funcionamento da máquina:
 
-```bash
-javac main.java Pet.java PetMachine.java
+- apenas **um pet por vez** pode permanecer na máquina;
+- a máquina inicia com **30 litros de água** e **10 litros de shampoo**;
+- cada banho consome **10 litros de água** e **2 litros de shampoo**;
+- a limpeza da máquina consome **3 litros de água** e **1 litro de shampoo**;
+- a capacidade máxima é de 30 litros de água e 10 litros de shampoo;
+- um banho só pode ser realizado quando existe um pet na máquina;
+- água e shampoo são verificados antes da realização do banho ou da limpeza;
+- caso um pet seja retirado ainda sujo, a máquina precisa ser limpa antes de receber outro pet.
+
+## 🧱 Estrutura e orientação a objetos
+
+O projeto foi dividido em três classes principais:
+
+### `Pet`
+
+Representa o pet e mantém informações relacionadas ao seu nome e estado de limpeza.
+
+### `PetMachine`
+
+Representa a máquina e concentra suas regras de funcionamento, incluindo:
+
+- controle de água;
+- controle de shampoo;
+- estado de limpeza;
+- entrada e saída de pets;
+- banho;
+- limpeza da máquina.
+
+### `Main`
+
+Responsável pela interação com a pessoa usuária por meio do terminal.
+
+A classe apresenta o menu de opções e direciona as ações escolhidas para os métodos correspondentes da `PetMachine`.
+
+## 🛠️ Tecnologias e conceitos
+
+- Java
+- Programação Orientada a Objetos
+- Classes e objetos
+- Encapsulamento
+- Métodos
+- Estruturas condicionais
+- Controle de estado
+- Regras de negócio
+- Git e GitHub
+
+## 📁 Estrutura do projeto
+
+```text
+Pet-Machine/
+│
+├── Main.java
+├── Pet.java
+├── PetMachine.java
+└── README.md
 ```
 
-2. Execute o programa:
+## 🚀 Como executar
+
+É necessário ter o **Java instalado** na máquina.
+
+### 1. Clone o repositório
 
 ```bash
-java main
+git clone https://github.com/juliane-lr/Pet-Machine.git
+cd Pet-Machine
 ```
 
-## Uso
+### 2. Compile os arquivos
 
-Ao executar, escolha uma opção do menu digitando o número correspondente e pressione Enter.
+```bash
+javac Main.java Pet.java PetMachine.java
+```
 
-## Observações
+### 3. Execute a aplicação
 
-- A máquina começa com 30 litros de água e 10 litros de shampoo.
-- Cada banho consome 10 litros de água e 2 litros de shampoo.
-- A lavagem da máquina consome 3 litros de água e 1 litro de shampoo.
-- Se for colocado e tirado da máquina um pet sujo, a máquina deve ser limpa para aceitar um novo pet.
+```bash
+java Main
+```
+
+### 4. Utilize o menu
+
+Após iniciar a aplicação, escolha uma das opções disponíveis digitando o número correspondente:
+
+```text
+1. Dar banho no pet
+2. Abastecer a máquina com água
+3. Abastecer a máquina com shampoo
+4. Verificar água na máquina
+5. Verificar shampoo na máquina
+6. Verificar se tem pet na máquina
+7. Colocar pet na máquina
+8. Retirar pet da máquina
+9. Limpar a máquina
+0. Sair
+```
+
+## 💡 O que pratiquei
+
+O desenvolvimento deste projeto permitiu praticar fundamentos de Java e Programação Orientada a Objetos, especialmente a divisão de responsabilidades entre classes e o controle do estado dos objetos.
+
+Também foram trabalhadas regras de negócio e validações para impedir operações inválidas, como realizar um banho sem pet, consumir recursos insuficientes ou inserir um novo pet enquanto a máquina precisa ser limpa.
+
+## 📌 Contexto
+
+Projeto desenvolvido como exercício prático durante meus estudos de **Java e Programação Orientada a Objetos** na formação em Análise e Desenvolvimento de Sistemas.
